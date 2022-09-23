@@ -10,9 +10,14 @@ public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
-	Instantiate(prefab, Vector3.zero, Quaternion.identity);
+		GameObject go = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+		go.GetComponent<Renderer>().material.color = new Color(0, 1, 0);
 	
         
+    }
+	Color GetRandomColor()
+    {
+		return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
     // Update is called once per frame
@@ -33,4 +38,6 @@ public GameObject prefab;
 	}
         
     }
+	
+
 }
